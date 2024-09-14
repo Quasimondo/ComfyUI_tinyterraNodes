@@ -635,7 +635,7 @@ app.registerExtension({
             const origOnConfigure = nodeType.prototype.onConfigure;
             nodeType.prototype.onConfigure = function () {
                 const r = origOnConfigure ? origOnConfigure.apply(this, arguments) : undefined;
-                let nodeVersion = nodeData.input.hidden?.ttNnodeVersion ? nodeData.input.hidden.ttNnodeVersion : null;
+                let nodeVersion = nodeData.input.hidden?.ttNnodeVersion ? nodeData.input.hidden.ttNnodeVersion : "";
                 nodeType.ttNnodeVersion = nodeVersion;
                 this.properties['ttNnodeVersion'] = this.properties['ttNnodeVersion'] ? this.properties['ttNnodeVersion'] : nodeVersion;
                 if ((this.properties['ttNnodeVersion'].split(".")[0] !== nodeVersion.split(".")[0]) || (this.properties['ttNnodeVersion'].split(".")[1] !== nodeVersion.split(".")[1])) {
