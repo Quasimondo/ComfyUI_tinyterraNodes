@@ -3343,10 +3343,14 @@ class ttN_debugInput:
                     "console_color": (["Black", "Red", "Green", "Yellow", "Blue", "Violet", "Cyan", "White", "Grey", "LightRed", "LightGreen", "LightYellow", "LightBlue", "LightViolet", "LightCyan", "LightWhite"], {"default": "Red"}),
                     },
                 "optional": {
-                    "debug": ("", {"default": None}),
+                    "debug": ("INT,FLOAT,STRING,BOOLEAN", {"default": None}),
                     }
         }
 
+    @classmethod
+    def VALIDATE_INPUTS(cls, input_types, print_to_console=None, console_title=None, console_color=None, debug=None):   
+        return True     
+  
     RETURN_TYPES = tuple()
     RETURN_NAMES = tuple()
     FUNCTION = "debug"
